@@ -44,14 +44,20 @@ export default function Footer() {
 
           {/* Page Links */}
           <div className="flex flex-wrap items-center gap-6 text-xs text-zinc-400">
-            <Link href="/projects" className="hover:text-zinc-200 transition-colors">
-              Portfolio
+            <Link href="/workflow" className="hover:text-zinc-200 transition-colors">
+              Workflow Hub
             </Link>
-            <Link href="/construction-branding" className="hover:text-zinc-200 transition-colors">
+            <Link href="/workflow/construction-branding" className="hover:text-zinc-200 transition-colors">
               Branding
             </Link>
-            <Link href="/management-systems" className="hover:text-zinc-200 transition-colors">
+            <Link href="/workflow/construction-systems" className="hover:text-zinc-200 transition-colors">
               Systems
+            </Link>
+            <Link href="/workflow/project-management" className="hover:text-zinc-200 transition-colors">
+              PM Delivery
+            </Link>
+            <Link href="/projects" className="hover:text-zinc-200 transition-colors">
+              Portfolio
             </Link>
             <Link href="/partnership" className="hover:text-zinc-200 transition-colors">
               Partnership

@@ -13,13 +13,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: `${baseUrl}/management-systems`,
+      url: `${baseUrl}/workflow`,
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.95,
     },
     {
-      url: `${baseUrl}/construction-branding`,
+      url: `${baseUrl}/workflow/construction-branding`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/workflow/construction-systems`,
+      lastModified: currentDate,
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/workflow/project-management`,
       lastModified: currentDate,
       changeFrequency: "weekly" as const,
       priority: 0.9,

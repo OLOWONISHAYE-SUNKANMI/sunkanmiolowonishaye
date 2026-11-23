@@ -12,6 +12,20 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      {
+        source: "/management-systems",
+        destination: "/workflow/construction-systems",
+        permanent: true,
+      },
+      {
+        source: "/construction-branding",
+        destination: "/workflow/construction-branding",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -7,11 +7,11 @@ import { HardHat, Sparkles, ArrowUpRight, ArrowRight, CheckCircle2, Shield, Truc
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Construction & Industrial Branding | Site Hoardings & Fleet Livery",
+  title: "Construction Branding Workflow | Site Hoardings & Fleet Livery Systems",
   description:
-    "End-to-end branding systems for civil contractors and construction leaders engineered by Sunkanmi Olowonishaye via SK PROJECTS: perimeter hoardings, vehicle livery, safety wayfinding, and tender decks.",
+    "End-to-end branding workflow for civil contractors and construction leaders engineered by Sunkanmi Olowonishaye via SK PROJECTS: perimeter hoardings, vehicle livery, safety wayfinding, and tender decks.",
   keywords: [
-    "Construction Branding",
+    "Construction Branding Workflow",
     "Construction Brand Identity",
     "Site Hoardings Design",
     "Plant Machinery Fleet Livery",
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     "SK PROJECTS Construction Branding",
   ],
   alternates: {
-    canonical: "/construction-branding",
+    canonical: "/workflow/construction-branding",
   },
 };
 
-export default function ConstructionBrandingPage() {
+export default function ConstructionBrandingWorkflowPage() {
   return (
     <div className="flex min-h-screen flex-col bg-zinc-950 text-zinc-100">
       <Navbar />
@@ -37,13 +37,13 @@ export default function ConstructionBrandingPage() {
             <div className="max-w-3xl">
               <div className="inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-500/10 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider text-amber-300">
                 <HardHat className="h-3.5 w-3.5" />
-                <span>Dedicated Spatial &amp; Brand Page</span>
+                <span>Workflow Specialization</span>
               </div>
               <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-zinc-100 sm:text-5xl lg:text-6xl">
-                Construction &amp; Industrial Branding
+                Construction Branding Workflow
               </h1>
               <p className="mt-6 text-lg text-zinc-300 leading-relaxed">
-                Branding for heavy industry demands materials engineered for harsh site weather, massive physical scale, strict health &amp; safety compliance, and compelling public bid presentations. Delivered in partnership with{" "}
+                Branding for heavy industry demands materials engineered for harsh site weather, massive physical scale, strict health &amp; safety compliance, and compelling public bid presentations. Delivered through{" "}
                 <a
                   href={portfolioConfig.agency.websiteUrl}
                   target="_blank"
