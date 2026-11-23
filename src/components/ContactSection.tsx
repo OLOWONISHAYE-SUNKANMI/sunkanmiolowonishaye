@@ -2,8 +2,9 @@
 
 import { useState } from "react";
 import { portfolioConfig } from "@/data/portfolioData";
-import { Mail, Phone, MapPin, Send, CheckCircle2, ArrowUpRight, Sparkles } from "lucide-react";
+import { Mail, PhoneCall, MapPin, Send, CheckCircle2, ArrowUpRight, Sparkles, MessageCircle, MessageSquare } from "lucide-react";
 import GithubIcon from "@/components/GithubIcon";
+import WhatsAppIcon from "@/components/WhatsAppIcon";
 
 export default function ContactSection() {
   const { personal, agency } = portfolioConfig;
@@ -37,76 +38,147 @@ export default function ContactSection() {
               Available for CTO roles, technical advisory, custom enterprise software builds, construction branding, and creative studio engagements through {agency.name}.
             </p>
 
-            <div className="mt-8 space-y-4">
+            {/* Direct Quick Action Buttons */}
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-2.5">
               <a
-                href={`mailto:${personal.contactEmail}`}
-                className="flex items-center gap-3.5 rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 transition-colors hover:border-zinc-700 hover:bg-zinc-900"
+                href={personal.emailUrl}
+                className="flex items-center justify-center gap-2 rounded-xl bg-amber-500 px-3.5 py-3 text-xs font-bold uppercase tracking-wider text-zinc-950 transition-all hover:bg-amber-400 active:scale-95 shadow-md shadow-amber-500/10 text-center"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-400 shrink-0">
-                  <Mail className="h-5 w-5" />
-                </div>
-                <div>
-                  <span className="text-xs text-zinc-400">Email Address</span>
-                  <div className="text-sm font-semibold text-zinc-200">{personal.contactEmail}</div>
-                </div>
+                <Mail className="h-4 w-4" />
+                <span>Email Me</span>
               </a>
 
               <a
-                href={`tel:${personal.phone}`}
-                className="flex items-center gap-3.5 rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 transition-colors hover:border-zinc-700 hover:bg-zinc-900"
+                href={personal.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-3.5 py-3 text-xs font-bold uppercase tracking-wider text-zinc-950 transition-all hover:bg-emerald-400 active:scale-95 shadow-md shadow-emerald-500/10 text-center"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400 shrink-0">
-                  <Phone className="h-5 w-5" />
-                </div>
-                <div>
-                  <span className="text-xs text-zinc-400">Direct Phone / WhatsApp</span>
-                  <div className="text-sm font-semibold text-zinc-200">{personal.phone}</div>
-                </div>
+                <WhatsAppIcon className="h-4 w-4" />
+                <span>WhatsApp</span>
               </a>
 
+              <a
+                href={personal.phoneCallUrl}
+                className="flex items-center justify-center gap-2 rounded-xl bg-cyan-500 px-3.5 py-3 text-xs font-bold uppercase tracking-wider text-zinc-950 transition-all hover:bg-cyan-400 active:scale-95 shadow-md shadow-cyan-500/10 text-center"
+              >
+                <PhoneCall className="h-4 w-4" />
+                <span>Call Me</span>
+              </a>
+            </div>
+
+            {/* Detailed Contact Cards */}
+            <div className="mt-6 space-y-4">
+              {/* Card 1: Email */}
+              <div className="rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 transition-all hover:border-zinc-700">
+                <div className="flex items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-400 shrink-0">
+                      <Mail className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <span className="text-xs text-zinc-400">Direct Email</span>
+                      <div className="text-sm font-semibold text-zinc-200">{personal.contactEmail}</div>
+                    </div>
+                  </div>
+                  <a
+                    href={personal.emailUrl}
+                    className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-xs font-semibold text-amber-300 hover:bg-amber-500/20 transition-colors"
+                  >
+                    <span>Send Email</span>
+                    <ArrowUpRight className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Card 2: WhatsApp (WhatsApp Only: 08158896523) */}
+              <div className="rounded-xl border border-emerald-500/30 bg-emerald-500/5 p-4 transition-all hover:border-emerald-500/50">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0">
+                      <WhatsAppIcon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-emerald-400 font-semibold">WhatsApp</span>
+                        <span className="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-mono font-medium text-emerald-300">
+                          WhatsApp Only
+                        </span>
+                      </div>
+                      <div className="text-sm font-semibold text-zinc-100 font-mono mt-0.5">{personal.whatsapp}</div>
+                    </div>
+                  </div>
+                  <a
+                    href={personal.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-emerald-500 px-3.5 py-1.5 text-xs font-bold text-zinc-950 hover:bg-emerald-400 transition-colors shrink-0 shadow-sm"
+                  >
+                    <span>Open WhatsApp</span>
+                    <ArrowUpRight className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Card 3: Phone Call (08031680058) */}
+              <div className="rounded-xl border border-cyan-500/30 bg-cyan-500/5 p-4 transition-all hover:border-cyan-500/50">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/20 text-cyan-400 shrink-0">
+                      <PhoneCall className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs text-cyan-400 font-semibold">Voice Phone Line</span>
+                        <span className="rounded bg-cyan-500/20 px-2 py-0.5 text-[10px] font-mono font-medium text-cyan-300">
+                          Calls Only
+                        </span>
+                      </div>
+                      <div className="text-sm font-semibold text-zinc-100 font-mono mt-0.5">{personal.phone}</div>
+                    </div>
+                  </div>
+                  <a
+                    href={personal.phoneCallUrl}
+                    className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-cyan-500 px-3.5 py-1.5 text-xs font-bold text-zinc-950 hover:bg-cyan-400 transition-colors shrink-0 shadow-sm"
+                  >
+                    <span>Call Now</span>
+                    <PhoneCall className="h-3 w-3" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Card 4: Location */}
               <div className="flex items-center gap-3.5 rounded-xl border border-zinc-800 bg-zinc-900/60 p-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400 shrink-0">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-zinc-800 text-zinc-400 shrink-0">
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <span className="text-xs text-zinc-400">Location</span>
+                  <span className="text-xs text-zinc-400">Base of Operations</span>
                   <div className="text-sm font-semibold text-zinc-200">{personal.location}</div>
                 </div>
               </div>
 
-              <a
-                href={personal.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3.5 rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 transition-colors hover:border-zinc-700 hover:bg-zinc-900"
-              >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-400 shrink-0">
-                  <GithubIcon className="h-5 w-5" />
-                </div>
-                <div>
-                  <span className="text-xs text-zinc-400">GitHub Profile</span>
-                  <div className="text-sm font-semibold text-zinc-200">github.com/OLOWONISHAYE-SUNKANMI</div>
-                </div>
-              </a>
-
-              {/* Upwork Profile Direct Link */}
+              {/* Card 5: Upwork Profile Direct Link */}
               <a
                 href={personal.upwork}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3.5 rounded-xl border border-cyan-500/30 bg-cyan-500/5 p-4 transition-colors hover:border-cyan-400 hover:bg-cyan-500/10"
+                className="flex items-center justify-between rounded-xl border border-zinc-800 bg-zinc-900/60 p-4 transition-colors hover:border-cyan-400 hover:bg-zinc-900"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/20 text-cyan-400 shrink-0">
-                  <ArrowUpRight className="h-5 w-5" />
+                <div className="flex items-center gap-3.5">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/20 text-cyan-400 shrink-0">
+                    <ArrowUpRight className="h-5 w-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs text-cyan-400 font-semibold">Direct Freelance &amp; Consulting</span>
+                    <div className="text-sm font-semibold text-zinc-100">Hire on Upwork</div>
+                    <div className="text-[11px] text-zinc-400 font-mono">upwork.com/freelancers/~016e0112602d07ca42</div>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-xs text-cyan-400 font-semibold">Direct Freelance &amp; Consulting</span>
-                  <div className="text-sm font-semibold text-zinc-100">Hire on Upwork</div>
-                  <div className="text-[11px] text-zinc-400 font-mono">upwork.com/freelancers/~016e0112602d07ca42</div>
-                </div>
+                <span className="hidden sm:inline-flex text-xs font-semibold text-cyan-400">View Profile &rarr;</span>
               </a>
 
-              {/* Agency Direct Link */}
+              {/* Card 6: SK PROJECTS Agency Direct Link */}
               <div className="rounded-xl border border-amber-500/30 bg-gradient-to-br from-amber-500/10 to-zinc-900 p-5">
                 <div className="flex items-center gap-2 text-xs font-semibold text-amber-400">
                   <Sparkles className="h-4 w-4" />

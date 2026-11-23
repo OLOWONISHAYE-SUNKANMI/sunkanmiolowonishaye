@@ -51,7 +51,11 @@ export const portfolioConfig = {
     location: "Lagos, Nigeria",
     statusBadge: "CTO & Technical Architect | Available for Strategic Engagements",
     contactEmail: "skprojectx12@gmail.com",
-    phone: "08158896523",
+    emailUrl: "mailto:skprojectx12@gmail.com?subject=Project%20Inquiry%20-%20Sunkanmi%20Olowonishaye",
+    phone: "08031680058",
+    phoneCallUrl: "tel:+2348031680058",
+    whatsapp: "08158896523",
+    whatsappUrl: "https://wa.me/2348158896523?text=Hello%20Sunkanmi,%20I'm%20reaching%20out%20from%20your%20portfolio.",
     github: "https://github.com/OLOWONISHAYE-SUNKANMI",
     upwork: "https://www.upwork.com/freelancers/~016e0112602d07ca42",
     education: {
@@ -66,10 +70,12 @@ export const portfolioConfig = {
       { label: "Field Messaging Integrations", value: "WhatsApp / Telegram" },
     ],
     socials: [
+      { name: "WhatsApp (08158896523)", url: "https://wa.me/2348158896523?text=Hello%20Sunkanmi,%20I'm%20reaching%20out%20from%20your%20portfolio.", icon: "MessageCircle" },
+      { name: "Direct Call (08031680058)", url: "tel:+2348031680058", icon: "PhoneCall" },
+      { name: "Email", url: "mailto:skprojectx12@gmail.com?subject=Project%20Inquiry%20-%20Sunkanmi%20Olowonishaye", icon: "Mail" },
       { name: "GitHub", url: "https://github.com/OLOWONISHAYE-SUNKANMI", icon: "Github" },
       { name: "Upwork Profile", url: "https://www.upwork.com/freelancers/~016e0112602d07ca42", icon: "Briefcase" },
       { name: "SK PROJECTS", url: "https://skprojects.tech/", icon: "Globe" },
-      { name: "Email", url: "mailto:skprojectx12@gmail.com", icon: "Mail" },
     ],
   },
 

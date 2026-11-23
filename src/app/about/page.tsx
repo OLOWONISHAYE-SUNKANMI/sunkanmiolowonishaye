@@ -59,9 +59,17 @@ export default function AboutPage() {
                     <span>{personal.location}</span>
                   </div>
                   <div className="flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/60 px-3 py-1.5">
-                    <Phone className="h-3.5 w-3.5 text-emerald-400" />
-                    <span>{personal.phone}</span>
+                    <Phone className="h-3.5 w-3.5 text-cyan-400" />
+                    <span>Call: {personal.phone}</span>
                   </div>
+                  <a
+                    href={personal.whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-emerald-300 hover:bg-emerald-500/20 transition-colors"
+                  >
+                    <span>WhatsApp: {personal.whatsapp}</span>
+                  </a>
                   <div className="flex items-center gap-2 rounded-lg border border-zinc-800 bg-zinc-900/60 px-3 py-1.5">
                     <Mail className="h-3.5 w-3.5 text-amber-400" />
                     <span>{personal.contactEmail}</span>
